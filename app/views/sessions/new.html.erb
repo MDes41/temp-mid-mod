@@ -1,0 +1,6 @@
+<%= bootstrap_form_tag url: '/login' do |f| %>
+  <%= f.text_field :email %><br><br>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit 'Log In' %>
+<% end %><br />
+<%= link_to 'Create Account', new_user_path %>

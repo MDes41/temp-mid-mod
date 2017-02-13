@@ -1,0 +1,32 @@
+<% if current_user %>
+	<h1>Welcome, user <%= current_user.email %> - <%= link_to 'Logout', logout_path %></h1>
+<% else %>
+	<h1><%= link_to 'Login', login_path%></h1><br/>
+	<h1><%= link_to 'Create Account', new_user_path %></h1><br/>
+<% end %>
+
+
+<%= form_for @link do |f| %>
+	<ul>
+	  <li><%= f.label :url %></li>
+	  <li><%= f.text_field :url %></li>
+	  <li><%= f.label :title %></li>
+	  <li><%= f.password_field :name %></li>
+	  <li><%= f.submit 'Create Link' %></li>
+	</ul>
+<% end %>
+
+<table style="width:100%">
+  <tr>
+    <th>URL</th>
+    <th>Title</th> 
+    <th>Read</th>
+  </tr>
+  <% @links.each do |link| %>
+	  <tr>
+	    <td><%= link.url %></td>
+	    <td><%= link.name %></td> 
+	    <td><%= link.read %></td>
+	  </tr>
+  <% end %>
+</table>

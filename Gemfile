@@ -14,6 +14,9 @@ gem 'rails_12factor', group: :production
 gem 'responders'
 gem 'awesome_print'
 gem 'sprockets-es6'
+gem 'bcrypt'
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'unicorn'
