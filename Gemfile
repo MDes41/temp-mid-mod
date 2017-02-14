@@ -17,6 +17,7 @@ gem 'sprockets-es6'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'faraday'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'unicorn'
