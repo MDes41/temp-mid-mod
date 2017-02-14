@@ -7,7 +7,7 @@ class HotReads
 	end
 
 	def send_link_to_hot_reads(link)
-		conn = Faraday.new(:url => 'http://localhost:3000/urls')
+		conn = Faraday.new(:url => 'http://0.0.0.0:3000/urls')
 		# https://hot-reads.herokuapp.com
 
 		conn.post do |req|
