@@ -6,27 +6,29 @@
 <% end %>
 
 
-<%= form_for @link do |f| %>
-	<ul>
-	  <li><%= f.label :url %></li>
-	  <li><%= f.text_field :url %></li>
-	  <li><%= f.label :title %></li>
-	  <li><%= f.password_field :name %></li>
-	  <li><%= f.submit 'Create Link' %></li>
-	</ul>
-<% end %>
+	<%= form_for @link do |f| %>
+		<ul>
+		  <li><%= f.label :url %></li>
+		  <li><%= f.text_field :url %></li>
+		  <li><%= f.label :title %></li>
+		  <li><%= f.text_field :title %></li>
+		  <li><%= f.submit 'Create Link' %></li>
+		</ul>
+	<% end %>
 
 <table style="width:100%">
   <tr>
     <th>URL</th>
     <th>Title</th> 
-    <th>Read</th>
+    <th>Status</th>
+    <th>Mark Read</th>
   </tr>
   <% @links.each do |link| %>
-	  <tr>
-	    <td><%= link.url %></td>
-	    <td><%= link.name %></td> 
-	    <td><%= link.read %></td>
-	  </tr>
+		  <tr class='link' data-link-id=<%= link.id %>>
+		    <td><%= link.url %></td>
+		    <td><%= link.title %></td> 
+		    <td><div class='read-status'><%= link.read %></div></td>
+		    <td><%= link_to 'Read', links_path, class: 'mark-as-read' %></td>
+		  </tr>
   <% end %>
 </table>
