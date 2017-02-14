@@ -11,7 +11,7 @@ class HotReads
 		# https://hot-reads.herokuapp.com
 
 		conn.post do |req|
-		  req.body = JSON.stringify(link)
+		  req.body = link.to_json
 		end
 	end
 
