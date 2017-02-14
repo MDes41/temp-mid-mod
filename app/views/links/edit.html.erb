@@ -1,0 +1,9 @@
+	<%= form_for @link do |f| %>
+		<ul>
+		  <li><%= f.label :url %></li>
+		  <li><%= f.text_field :url%></li>
+		  <li><%= f.label :title %></li>
+		  <li><%= f.text_field :title %></li>
+		  <li><%= f.submit 'Update Link' %></li>
+		</ul>
+	<% end %>

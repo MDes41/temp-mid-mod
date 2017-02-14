@@ -22,6 +22,8 @@
     <th>Title</th> 
     <th>Status</th>
     <th>Mark Read</th>
+    <th>Edit</th>
+
   </tr>
   <% @links.each do |link| %>
 		  <tr class='link' data-link-id=<%= link.id %>>
@@ -29,6 +31,7 @@
 		    <td><%= link.title %></td> 
 		    <td><div class='read-status'><%= link.read %></div></td>
 		    <td><%= link_to 'Read', links_path, class: 'mark-as-read' %></td>
+		    <td><%= link_to 'Edit', edit_link_path(link)%></td>
 		  </tr>
   <% end %>
 </table>
