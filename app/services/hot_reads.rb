@@ -1,5 +1,3 @@
-require 'json'
-
 class HotReads
 
 	def initialize(link)
@@ -7,11 +5,11 @@ class HotReads
 	end
 
 	def send_link_to_hot_reads(link)
-		conn = Faraday.new(:url => 'http://0.0.0.0:3000/urls')
+		conn = Faraday.new(:url => 'https://hot-reads.herokuapp.com/urls')
 		# https://hot-reads.herokuapp.com
 
 		conn.post do |req|
-		  req.body = link.to_json
+		  req.params['body'] = link.to_json
 		end
 	end
 
