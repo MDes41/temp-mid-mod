@@ -1,11 +1,12 @@
 
 class LinksController < ApplicationController
 	def index
-		@link = Link.new
-		@links = Link.all
+		# @link = current_user.link.new
+		@links = current_user.links
 	end
 
 	def create
+		byebug
 		@link = Link.new(link_params)
 		if @link.save
 			flash['alert-success'] = "Created Link"
